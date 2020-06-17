@@ -1,0 +1,53 @@
+﻿@model AMMiniProject.Models.IndexViewModel;
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">List of Alumni in MsAlumni</h1>
+    @for (int i = 0; i < Model.alumniDTO.Count(); i++)
+    {
+        var obj = Model.alumniDTO[i];
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <p>External System ID</p>
+                    </th>
+                    <th>
+                        <p>No Ijazah</p>
+                    </th>
+                    <th>
+                        <p>Name</p>
+                    </th>
+                    <th>
+                        <p>Tanggal Lahir</p>
+                    </th>
+                    <th>
+                        <p>Tanggal Lulus</p>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <p>@obj.AdminData.ExternalSystemId</p>
+                    </td>
+                    <td>
+                        <p>@obj.AdminData.NoIjazah</p>
+                    </td>
+                    <td>
+                        <p>@obj.AdminData.Name</p>
+                    </td>
+                    <td>
+                        <p>@obj.AdminData.TanggalLahir</p>
+                    </td>
+                    <td>
+                        <p>@obj.AdminData.TanggalLulus</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    }
+</div>
