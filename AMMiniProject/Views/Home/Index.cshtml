@@ -6,9 +6,8 @@
 
 <div class="text-center">
     <h1 class="display-4">List of Alumni in MsAlumni</h1>
-    @for (int i = 0; i < Model.alumniDTO.Count(); i++)
-    {
-        var obj = Model.alumniDTO[i];
+   
+        
         <table>
             <thead>
                 <tr>
@@ -30,24 +29,29 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        <p>@obj.AdminData.ExternalSystemId</p>
-                    </td>
-                    <td>
-                        <p>@obj.AdminData.NoIjazah</p>
-                    </td>
-                    <td>
-                        <p>@obj.AdminData.Name</p>
-                    </td>
-                    <td>
-                        <p>@obj.AdminData.TanggalLahir</p>
-                    </td>
-                    <td>
-                        <p>@obj.AdminData.TanggalLulus</p>
-                    </td>
-                </tr>
+                @for (int i = 0; i < Model.alumniDTO.Count(); i++)
+                {
+                    var obj = Model.alumniDTO[i];
+                    <tr>
+                        <td>
+                            <p>@obj.AdminData.ExternalSystemId</p>
+                        </td>
+                        <td>
+                            <p>@obj.AdminData.NoIjazah</p>
+                        </td>
+                        <td>
+                            <p>@obj.AdminData.Name</p>
+                        </td>
+                        <td>
+                            <p>@obj.AdminData.TanggalLahir</p>
+                        </td>
+                        <td>
+                            <p>@obj.AdminData.TanggalLulus</p>
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
-    }
+
+    <p>@Model.alumniAja.AdminData.Name</p>
 </div>

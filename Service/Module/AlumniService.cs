@@ -10,6 +10,7 @@ namespace Service.Module
     public interface IAlumniService
     {
         List<AlumniSubdomain> GetAlumnis();
+        AlumniSubdomain GetAlumniById(string Id);
     }
     public class AlumniService : IAlumniService
     {
@@ -17,6 +18,16 @@ namespace Service.Module
         public AlumniService(IAlumniRepository alumniRepository)
         {
             this.alumniRepository = alumniRepository;
+        }
+
+        public AlumniSubdomain GetAlumniById(string Id)
+        {
+            var alumni = alumniRepository.GetByID(Id);
+            AlumniSubdomain alumniSubdomain = new AlumniSubdomain
+            {
+                AdminData = alumni
+            };
+            return alumniSubdomain;
         }
 
         public List<AlumniSubdomain> GetAlumnis()

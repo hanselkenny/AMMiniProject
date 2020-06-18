@@ -24,6 +24,7 @@ namespace AMMiniProject.Controllers
         {
             IndexViewModel indexViewModel = new IndexViewModel();
             indexViewModel.alumniDTO = alumniService.GetAlumnis();
+            indexViewModel.alumniAja = alumniService.GetAlumniById("2220174759");
             return View(indexViewModel);
         }
 

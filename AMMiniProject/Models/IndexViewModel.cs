@@ -10,5 +10,6 @@ namespace AMMiniProject.Models
     public class IndexViewModel
     {
         public List<AlumniSubdomain> alumniDTO{ get; set; }
+        public AlumniSubdomain alumniAja{ get; set; }
     }
 }
