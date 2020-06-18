@@ -4,45 +4,196 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - AMMiniProject</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    @*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="~/css/site.css" />*@
+    <link rel="stylesheet" href="~/lib/binus-bootstrap/css/themes/university/css/style.css">
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    @*<header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AMMiniProject</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>*@
+
+    <div id="page" class="main-container">
+        <section class="tagline-banner new-layout">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AMMiniProject</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+                <div class="wrap">
+                    <span class="banner">
+                        <span class="banner-image"></span>
+                    </span>
+                    <span class="tagline">People Innovation Excellence</span>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        </section>
+
+        <header class="header" id="header">
+            <div class="header-top">
+                <div class="container">
+                    <section class="logo">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="~/lib/binus-bootstrap/images/logo.png" alt="Logo">
+                        </a>
+                    </section>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        @*<footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2020 - AMMiniProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>*@
+
+        <footer class="footer new-layout" id="footer">
+            <section class="footer-widget">
+                <div class="container">
+                    <div class="group-item">
+                        <div class="item has-padding-right">
+                            <div class="footer-title">
+                                <h2 class="title" title="Social Media tooltip">Social Media</h2>
+                            </div>
+                            <div class="social-media">
+                                <a href="#" class="icon icon-twitter"></a>
+                                <a href="#" class="icon icon-facebook"></a>
+                                <a href="#" class="icon icon-google-plus"></a>
+                                <a href="#" class="icon icon-youtube"></a>
+                                <a href="#" class="icon icon-rss"></a>
+                                <a href="#" class="icon icon-website"></a>
+                                <a href="#" class="icon icon-line"></a>
+                                <a href="#" class="icon icon-whatsapp"></a>
+                                <a href="#" class="icon icon-linkedin"></a>
+                                <a href="#" class="icon icon-instagram"></a>
+                                <a href="#" class="icon icon-print"></a>
+                                <a href="#" class="icon icon-contact-mail"></a>
+                            </div>
+                        </div>
+                        <div class="item has-padding">
+                            <div class="footer-title">
+                                <h2 class="title">Feedback &amp; Bug</h2>
+                            </div>
+                            <div class="feedback-area">
+                                <a href="#" class="button button-primary wide" id="show-form-feedback">Report Feedback &amp; Bug</a>
+                                <div class="feedback-popup">
+                                    <a href="#" class="feedback-close" id="close-form-feedback"></a>
+                                    <form action="#" method="post">
+                                        <p>
+                                            <input type="text" name="input[]" placeholder="Subject">
+                                        </p>
+                                        <p>
+                                            <textarea name="input[]" rowspan="2" placeholder="Message"></textarea>
+                                        </p>
+                                        <p>
+                                            <input type="submit" class="button button-primary wide" value="Send">
+                                        </p>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item has-padding-left bottom-direction">
+                            <div class="corporate-area">
+                                <h1 class="main-title">BINUS University</h1>
+                                <h3 class="pre-title">Corporate Name</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - AMMiniProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>*@
+
+    <!-- Vendor -->
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.ui.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.browser.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.fancyfields.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.fancybox.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.mcustomscrollbar.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.datatables.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.datatables.fixedcolumns.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.chosen.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.qtip.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/raphael.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/formalhaut/build/formalhaut.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/multiselect.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/autosize.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.ui.timepicker.js"></script>
+
+    <!-- Calendar -->
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/date.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.formbubble.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/fullcalendar.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/fullcalendar.viewmore.js"></script>
+
+    <!-- Global -->
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/script.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/script.navigation.js"></script>
+
+    <!-- Plugins -->
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/accordion-toggle.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/advanced-combobox.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/body-navigation.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/combobox.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/datepicker.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/editor.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/freeze-pane.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/fullcalendar.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/scrollbar.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/tabulation.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/tooltip.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/uploader.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/widgets.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/multiselect.js"></script>
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/plugins/chatting.js"></script>
+
+    <!-- Main JS -->
+    <script type="text/javascript" src="~/lib/binus-bootstrap/js/main.js"></script>
+
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                $('.update-freeze-pane').click(function (e) {
+                    e.preventDefault();
+                    $('.freeze-pane').data('has-init', 'no');
+
+                    $('.freeze-pane').binus_freeze_pane({
+                        fixed_left: 0,
+                        on_window_load: false
+                    });
+                });
+            });
+        })(jQuery);
+    </script>
+
     @RenderSection("Scripts", required: false)
 </body>
 </html>
