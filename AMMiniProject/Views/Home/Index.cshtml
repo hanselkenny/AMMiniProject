@@ -1,53 +1,50 @@
 ﻿@model AMMiniProject.Models.IndexViewModel;
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Verify";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">List of Alumni in MsAlumni</h1>
-    @for (int i = 0; i < Model.alumniDTO.Count(); i++)
-    {
-        var obj = Model.alumniDTO[i];
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        <p>External System ID</p>
-                    </th>
-                    <th>
-                        <p>No Ijazah</p>
-                    </th>
-                    <th>
-                        <p>Name</p>
-                    </th>
-                    <th>
-                        <p>Tanggal Lahir</p>
-                    </th>
-                    <th>
-                        <p>Tanggal Lulus</p>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <p>@obj.AdminData.ExternalSystemId</p>
-                    </td>
-                    <td>
-                        <p>@obj.AdminData.NoIjazah</p>
-                    </td>
-                    <td>
-                        <p>@obj.AdminData.Name</p>
-                    </td>
-                    <td>
-                        <p>@obj.AdminData.TanggalLahir</p>
-                    </td>
-                    <td>
-                        <p>@obj.AdminData.TanggalLulus</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    }
-</div>
+    <div class="main-content has-widget" id="main-content">
+        <section class="page-heading">
+            <div class="container">
+                <h1>Verify E-Certificate</h1>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="box-container">
+                <div class="single-content popup-content" id="target-id">
+                    <span class="alert is-warning" style="text-align: center;">
+                        Silahkan masukkan data e-certificate yang ingin diverifikasi.
+                    </span>
+                    <form>
+                        <p>
+                            <label>NIM<span class="required">*</span></label>
+                            <input type="text" name="input[]">
+                        </p>
+                        <p>
+                            <label>No. Ijazah<span class="required">*</span></label>
+                            <input type="text" name="input[]">
+                        </p>
+                        <p>
+                            <label>Tanggal Lahir<span class="required">*</span></label>
+                            <span class="custom-datepicker">
+                                <input type="text" name="input[]" class="datepicker">
+                                <span class="icon-area"></span>
+                            </span>
+                        </p>
+                        <p>
+                            <label>Tanggal Lulus<span class="required">*</span></label>
+                            <span class="custom-datepicker">
+                                <input type="text" name="input[]" class="datepicker">
+                                <span class="icon-area"></span>
+                            </span>
+                        </p>
+                        <p style="text-align: center;">
+                            <input type="submit" name="action[]" value="Verify" class="button button-primary">
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

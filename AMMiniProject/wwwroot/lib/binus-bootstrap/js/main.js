@@ -2,9 +2,6 @@
 
 	$(document).ready(function() {
 
-		// init navigation
-		window.binus_navigation();
-
 		// init pre content
 		$('.login-role').binus_combobox();
 
