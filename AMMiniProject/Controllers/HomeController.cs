@@ -23,11 +23,29 @@ namespace AMMiniProject.Controllers
         public IActionResult Index()
         {
             IndexViewModel indexViewModel = new IndexViewModel();
-            indexViewModel.alumniDTO = alumniService.GetAlumnis();
+            
             return View(indexViewModel);
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        public IActionResult Index(IndexViewModel model)
+        {
+            if(ModelState.IsValid == true)
+            {
+                //write code here
+            }
+            
+            IndexViewModel indexViewModel = new IndexViewModel();
+
+            return View(model);
+        }
+
+        public IActionResult Invalid()
+        {
+            return View();
+        }
+
+        public IActionResult Valid()
         {
             return View();
         }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - AMMiniProject</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/binus-bootstrap/css/themes/university/css/style.css">
 
 </head>
@@ -95,10 +95,6 @@
         </footer>
     </div>
 
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>*@
-
     <!-- Vendor -->
     <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.js"></script>
     <script type="text/javascript" src="~/lib/binus-bootstrap/js/jquery.ui.js"></script>
@@ -146,22 +142,6 @@
 
     <!-- Main JS -->
     <script type="text/javascript" src="~/lib/binus-bootstrap/js/main.js"></script>
-
-    <script type="text/javascript">
-        (function ($) {
-            $(document).ready(function () {
-                $('.update-freeze-pane').click(function (e) {
-                    e.preventDefault();
-                    $('.freeze-pane').data('has-init', 'no');
-
-                    $('.freeze-pane').binus_freeze_pane({
-                        fixed_left: 0,
-                        on_window_load: false
-                    });
-                });
-            });
-        })(jQuery);
-    </script>
 
     @RenderSection("Scripts", required: false)
 </body>

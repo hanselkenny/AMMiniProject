@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Certificate Not Found";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="main-content has-widget" id="main-content">
+        <section class="page-heading">
+            <div class="container">
+                <h1>Verify E-Certificate</h1>
+            </div>
+        </section>
+
+        <div class="container">
+            <div class="box-container">
+                <div class="single-content popup-content" id="target-id">
+                    <span class="alert is-error" style="text-align: center;">
+                        Sertifikat tidak ditemukan.
+                    </span>
+
+                    <p style="text-align: center; margin: 40px 0px; font-weight: 600;">
+                        Pastikan data yang anda masukkan sudah benar.
+                    </p>
+                    
+                    <p style="text-align: center; margin-top: 20px">
+                        <a class="button button-primary" asp-area="" asp-controller="Home" asp-action="Index">Return to Homepage</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
