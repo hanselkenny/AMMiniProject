@@ -9,6 +9,18 @@ namespace AMMiniProject.Models
 {
     public class IndexViewModel
     {
+        [Required(ErrorMessage ="NIM harus diisi")]
+        public string ExternalSystemID { get; set; }
+
+        [Required(ErrorMessage = "No. Ijazah harus diisi")]
+        public string NoIjazah { get; set; }
+
+        [Required(ErrorMessage = "Tanggal lahir harus diisi")]
+        public DateTime? Tgl_Lahir { get; set; }
+
+        [Required(ErrorMessage = "Tanggal lulus harus diisi")]
+        public DateTime? Tgl_Lulus { get; set; }
+        public List<AlumniSubdomain> alumniSubdomains{ get; set; }
         public List<AlumniSubdomain> alumniDTO{ get; set; }
         public AlumniSubdomain alumniAja{ get; set; }
     }
