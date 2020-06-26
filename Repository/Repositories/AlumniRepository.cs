@@ -10,7 +10,7 @@ namespace Repository.Repositories
 {
     public interface IAlumniRepository : IRepository<AlumniDTO>
     {
-        AlumniDTO GetByID(string ID);
+        AlumniDTO GetByID(string Id);
     }
     public class AlumniRepository : BaseRepository<AlumniDTO>, IAlumniRepository
     {
@@ -18,6 +18,7 @@ namespace Repository.Repositories
         {
 
         }
+
         public AlumniDTO GetByID(string Id)
         {
             return Context.alumniDTOs.Where(x => x.ExternalSystemId.Equals(Id) && x.StrSc.Equals('A')).FirstOrDefault();

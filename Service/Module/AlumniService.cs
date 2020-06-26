@@ -11,23 +11,13 @@ namespace Service.Module
     {
         List<AlumniSubdomain> GetAlumnis();
         AlumniSubdomain GetAlumniById(string Id);
-        AlumniSubdomain GetNIM(string? id);
     }
-
     public class AlumniService : IAlumniService
     {
         private IAlumniRepository alumniRepository;
         public AlumniService(IAlumniRepository alumniRepository)
         {
             this.alumniRepository = alumniRepository;
-        }
-
-        public List<AlumniSubdomain> GetAlumnis()
-        {
-            return alumniRepository.FindAll().Select(x => new AlumniSubdomain
-            {
-                AdminData = x
-            }).ToList();
         }
 
         public AlumniSubdomain GetAlumniById(string Id)
@@ -40,14 +30,12 @@ namespace Service.Module
             return alumniSubdomain;
         }
 
-        public AlumniSubdomain GetNIM(string? id)
+        public List<AlumniSubdomain> GetAlumnis()
         {
-            var test = alumniRepository.GetByID(id);
-            AlumniSubdomain alumniSubdomain = new AlumniSubdomain
+            return alumniRepository.FindAll().Select(x => new AlumniSubdomain
             {
-                AdminData = test
-            };
-            return alumniSubdomain;
+                AdminData = x
+            }).ToList();
         }
     }
 }

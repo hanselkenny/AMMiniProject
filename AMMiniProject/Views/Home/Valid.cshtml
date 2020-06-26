@@ -1,0 +1,89 @@
+﻿@model AMMiniProject.Models.ValidViewModel;
+@{
+    ViewData["Title"] = "Certificate Found";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .field-name{
+        font-weight: 600;
+    }
+</style>
+
+<div class="main-content has-widget" id="main-content">
+    <section class="page-heading">
+        <div class="container">
+            <h1>Verify E-Certificate</h1>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="box-container">
+            <div class="single-content popup-content" id="target-id">
+                <span class="alert is-success" style="text-align: center;">
+                    Sertifikat berhasil ditemukan.
+                </span>
+
+                <p>
+                    <label class="field-name">NIM</label>
+                    <blockquote>
+                        <span id="ExternalSystemID">2301854315</span>
+                    </blockquote>
+                </p>
+
+                <p>
+                    <label class="field-name">No. Sertifikat</label>
+                    <blockquote>
+                        <span id="NoIjazah">00011122233</span>
+                    </blockquote>
+                </p>
+
+                <p>
+                    <label class="field-name">Tanggal Lahir</label>
+                    <blockquote>
+                        <span id="Tgl_Lahir">2-6-1999</span>
+                    </blockquote>
+                </p>
+
+                <p>
+                    <label class="field-name">Tanggal Lulus</label>
+                    <blockquote>
+                        <span id="Tgl_Lulus">2-6-1999</span>
+                    </blockquote>
+                </p>
+
+                <p>
+                    <label class="field-name">Nama Lengkap</label>
+                    <blockquote>
+                        <span id="Name">Agus Wahyudi</span>
+                    </blockquote>
+                </p>
+
+                <p>
+                    <label class="field-name">Jurusan</label>
+                    <blockquote>
+                        <span id="AcadProgramDesc">DKV</span>
+                    </blockquote>
+                </p>
+
+                <p>
+                    <label class="field-name">Gelar</label>
+                    <blockquote>
+                        <span id="Gelar">S1</span>
+                    </blockquote>
+                </p>
+
+                <p>
+                    <label class="field-name">Certificate PDF</label>
+                    <div>
+                        <a class="button button-primary" asp-area="" asp-controller="Valid" asp-action="Download">Download PDF</a>
+                    </div>
+                </p>
+
+                <p style="text-align: center; margin-top: 20px">
+                    <a class="button button-primary" asp-area="" asp-controller="Home" asp-action="Index">Return to Homepage</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
