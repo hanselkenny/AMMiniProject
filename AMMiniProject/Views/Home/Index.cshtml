@@ -25,7 +25,7 @@
                 <span class="alert is-warning" style="text-align: center;">
                     Silahkan masukkan data e-certificate yang ingin diverifikasi.
                 </span>
-                <form method="post" id="verifyForm">
+                <form asp-action="Index">
                     <p>
                         <label>NIM<span class="required">*</span></label>
                         <input type="text" name="ExternalSystemID" id="ExternalSystemID">
@@ -53,17 +53,17 @@
                         @Html.ValidationMessageFor(model => model.Tgl_Lulus, "", new { @class = "Error" })
                     </p>
                     <p style="text-align: center;">
-                        <input type="submit" id="verifyButton" value="Verify" class="button button-primary">
+                        <input type="submit" name="action[]" value="Verify" class="button button-primary">
                     </p>
                 </form>
 
-                <p style="text-align: center; margin-top: 20px">
-                    <a class="button button-primary" asp-area="" asp-controller="Home" asp-action="Valid">Success Page</a>
-                </p>
+                @*<p style="text-align: center; margin-top: 20px">
+            <a class="button button-primary" asp-area="" asp-controller="Home" asp-action="Valid">Success Page</a>
+        </p>
 
-                <p style="text-align: center; margin-top: 20px">
-                    <a class="button button-primary" asp-area="" asp-controller="Home" asp-action="Invalid">Error Page</a>
-                </p>
+        <p style="text-align: center; margin-top: 20px">
+            <a class="button button-primary" asp-area="" asp-controller="Home" asp-action="Invalid">Error Page</a>
+        </p>*@
             </div>
         </div>
     </div>

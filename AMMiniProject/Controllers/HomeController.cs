@@ -33,12 +33,40 @@ namespace AMMiniProject.Controllers
         {
             if(ModelState.IsValid == true)
             {
-                //write code here
+                var externalSystemId = alumniService.GetAlumniById(model.ExternalSystemID);
+                bool flage = true;
+               
+                if (externalSystemId.AdminData == null)
+                {
+                    return RedirectToAction("Invalid");
+                }
+                else
+                {
+                    string TanggalLahirDB = externalSystemId.AdminData.TanggalLahir.ToString("dd-MM-yyyy");
+                    string TanggalLahirModel = model.Tgl_Lahir.GetValueOrDefault().ToString("dd-MM-yyyy");
+                    string TanggalLulusDB = externalSystemId.AdminData.TanggalLulus.ToString("dd-MM-yyyy");
+                    string TanggalLulusModel = model.Tgl_Lulus.GetValueOrDefault().ToString("dd-MM-yyyy");
+                    if (!externalSystemId.AdminData.NoIjazah.Equals(model.NoIjazah))
+                    {
+                        flage = false;
+                    }
+                    if (!TanggalLahirDB.Equals(TanggalLahirModel))
+                    {
+                        flage = false;
+                    }
+                    if (!TanggalLulusDB.Equals(TanggalLulusModel))
+                    {
+                        flage = false;
+                    }
+                    if (flage)
+                    {
+                        return RedirectToAction("Valid");
+                    }
+                }
+                return RedirectToAction("Index");
             }
-            
-            IndexViewModel indexViewModel = new IndexViewModel();
 
-            return View(model);
+            return RedirectToAction("Index");
         }
 
         public IActionResult Invalid()
